@@ -31,6 +31,7 @@ body {
 .container .group-input {
     display: flex;
     flex-direction: row;
+    column-gap: 5px;
 }
 
 #task-text {
@@ -43,7 +44,6 @@ body {
 }
 
 #add-task {
-    margin-left: 5px;
     padding: 10px 15px;
     background-color: #7da37d;
     color: #fff;
@@ -105,4 +105,17 @@ body {
 
 .completed {
     background-color: #dcedc8 !important;
+}
+
+@media (max-width: 460px) {
+    .container .group-input {
+        flex-direction: column;
+        row-gap: 6px;
+    }
+    #task-text {
+        border-radius: 8px;
+    }
+    #add-task {
+        border-radius: 8px;
+    }
 }

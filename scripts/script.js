@@ -30,23 +30,26 @@ function render() {
         const span = document.createElement("span");
         span.textContent = tasks[i].text;
 
-        const finish = document.createElement("button");
-        finish.textContent = tasks[i].completed ? "Desmarcar" : "Concluir";
+        const finish = document.createElement("span");
+        finish.textContent = tasks[i].completed ? "close" : "check";
         finish.classList.add("check");
+        finish.classList.add("material-symbols-outlined");
         finish.setAttribute("onclick", `toogleTask(${tasks[i].id})`);
-        createIcon(finish, tasks[i].completed ? "close" : "check");
+        
 
-        const edit = document.createElement("button");
-        edit.textContent = "Editar";
+        const edit = document.createElement("span");
+        edit.textContent = "edit";
         edit.classList.add("edit");
+        edit.classList.add("material-symbols-outlined");
         edit.setAttribute("onclick", `editTask(${tasks[i].id})`);
-        createIcon(edit, "edit");
+        
 
-        const deletar = document.createElement("button");
-        deletar.textContent = "Deletar";
+        const deletar = document.createElement("span");
+        deletar.textContent = "delete";
         deletar.classList.add("delete");
+        deletar.classList.add("material-symbols-outlined");
         deletar.setAttribute("onclick", `deletTask(${tasks[i].id})`);
-        createIcon(deletar, "delete");
+        
 
         const div = document.createElement("div");
         div.appendChild(finish);
